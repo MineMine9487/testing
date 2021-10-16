@@ -1,6 +1,8 @@
 
 from PySimpleGUI import *
 
+theme('Default')
+
 layout = [
     [Text("", size=(1, 1))],
    [Text("Hello World")],
@@ -12,8 +14,8 @@ layout = [
    [Text("", size=(None, None), key="Show")]
     
 ]
-window = Window("Test", layout, size= (200, 300), element_justification='c')
-theme= 'Default'
+window = Window("Test", layout, element_justification='c').Finalize()
+window.Maximize()
 
 while True:
     event, value = window.read()
